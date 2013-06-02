@@ -25,7 +25,11 @@ project(":addon") {
 	apply plugin: "eclipse"
 	eclipse.project.name = "${baseNameUpper}-addon"
 
-	version = "2.0"
+	version = "1.0"
+
+	vaadin.addon.title = "${baseNameUpper}"
+	vaadin.addon.author = 'Risto Yrjänä / Vaadin'
+	vaadin.addon.license = 'Apache License 2.0'
 
 	dependencies {
 		testCompile "junit:junit:4.+"
@@ -33,15 +37,7 @@ project(":addon") {
 
 	jar {
 		from sourceSets.main.allJava //include sources
-	   
-		manifest = project.manifest {
-			attributes 'Implementation-Title': "${baseNameUpper}"
-			attributes 'Implementation-Version': version
-			attributes 'Implementation-Vendor': 'Risto Yrjänä / Vaadin'
-			attributes 'Vaadin-Package-Version': '1'
-			attributes 'Vaadin-License-Title': 'Apache License 2.0'
-			}
-		}
+	}
 		
 	war.enabled = false //war plugin applied by the Vaadin plugin, not needed here
 }
