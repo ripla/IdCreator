@@ -10,3 +10,4 @@
 /*/src/main/webapp/VAADIN/gwt-unitCache
 .gradle*
 /target*
+rebel.xml
